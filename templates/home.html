@@ -1,0 +1,129 @@
+{% extends "base.html" %}                   <!--base.html을 상속받는다고 선언-->
+
+{% block title %}HOBBYBOX{% endblock %}    <!--title 블록 재정의-->
+
+<!--정적 파일인 css 연결하기 위하여, staticfiles를 로드-->
+{% load staticfiles %}
+<!--extrastyle 블록을 재정의하여 추가적으로 home.css 연결-->
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+<div id="content_home">
+    <div id="homeimg">
+        <img  src="{% static 'img/home1.png' %}" style="width:100%"/>
+    </div>
+    <br/><br/>
+    <br/><br/>
+    <h1 class="centered"><strong>HOBBYBOX STORY</strong></h1>
+    <h2></h2>
+    <h4 class="centered"><i>What's your hobby?</i></h4>
+    <hr align="center" style="border: solid 1.5px red; width:4%;">
+    <br/>
+    <h5 class="centered">무엇을 좋아하는지는 몰라도, 하고는 싶은 당신을 위하여
+        <br><br>당신의 취미를 찾아주는 특별한 상자, 하비박스가
+        <br><br>매월 나만의 취미를 찾아가는 과정을 통해 특별한 경험을 선물합니다.</h5>
+    <br/><br/>
+    <div id="intro">
+        <hr style="margin: 5px 0;">
+        <br/>
+        <br/>
+        <h1 class="centered"><strong>소개</strong></h1>
+        <h2></h2>
+        <h4 class="centered"><i>하비박스를 소개합니다.</i></h4>
+        <hr align="center" style="border: solid 1.5px red; width:4%;">
+        <br/>
+        <img  src="{% static 'img/logo2.PNG' %}" style="width: 90px;" class="centered"/>
+        <br/>
+        <br/>
+        <h5 class="centered">올해도 바쁜 일상 속에서도<br><br>당신을 행복하게 해 줄<br><br>소소한 취미를 가져보는게 어떨까요.<br><br></h5>
+        <br/><br/>
+        <br/><br/>
+        <h4 class="centered"><i>하비박스는 <strong>여섯 분야의 콘텐츠사업</strong>으로 <strong>취미</strong>와 <strong>즐거움</strong>을 제공합니다.</i></h4>
+        <hr align="center" style="border: solid 1.5px red; width:4%;">
+        <br/><br/>
+        <img  src="{% static 'img/s1.png' %}" style="width: 900px;" class="centered"/><br/>
+        <img  src="{% static 'img/s2.png' %}" style="width: 900px;" class="centered"/><br/>
+        <img  src="{% static 'img/s3.png' %}" style="width: 900px;" class="centered"/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <h4 class="centered"><i>모두가 취미를 즐길 수 있는 <strong>문화 사회적 환경을 조성</strong>하는 것이 하비박스의 목표입니다.</i></h4>
+        <hr align="center" style="border: solid 1.5px red; width:4%;">
+        <br/>
+        <h5 class="centered">▶ 취미를 통한 선순환 창출 ◀</h5>
+        <h2></h2>
+        <h5 class="centered">취약계층 아이들에게 취미를 통한 행복 찾아주기</h5>
+        <h5 class="centered">하비박스 전달과 취미박스를 통한 재능기부 사업</h5>
+        <h5 class="centered">하비큐레이터와의 만남을 통한 취미 발견 이벤트</h5>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <h4 class="centered"><i>처음에는 박스로 시작했지만 <strong>우리가 만나고 싶은 이유</strong>들을 만들어 나갑니다.</i></h4>
+        <hr align="center" style="border: solid 1.5px red; width:4%;">
+        <br/><br/>
+        <img  src="{% static 'img/s4.png' %}" style="width: 50px;" class="centered"/> 취미 연구소<br/><br/>
+        <img  src="{% static 'img/s8.png' %}" style="width: 50px;" class="centered"/> 취미 토크쇼<br/><br/>
+        <img  src="{% static 'img/s9.png' %}" style="width: 50px;" class="centered"/> 작품 전시회<br/><br/>
+        <img  src="{% static 'img/s6.png' %}" style="width: 50px;" class="centered"/> 취미 재능기부<br/><br/>
+        <img  src="{% static 'img/s7.png' %}" style="width: 50px;" class="centered"/> 취미 경진대회<br/><br/>
+        <img  src="{% static 'img/s5.png' %}" style="width: 50px;" class="centered"/> 지역 취미축제
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <img  src="{% static 'img/s10.png' %}" style="width: 70px;" class="centered"/>
+        <strong>당신에겐 어떤 취미가 배달될까요?</strong>
+        <img  src="{% static 'img/s11.png' %}" style="width: 70px;" class="centered"/>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+
+    <div id="footer" style="top: 300px;">
+        <div class="scroll">
+            <div class="inner_wrap">
+                <div class="scroll_up">
+                    <a href="#header">
+                        <span><img src="{% static 'img/up.png' %}" style="width: 24px; margin-right: 5px; vertical-align: middle;"/>SCROLL UP</span>
+                    </a>
+                </div>
+                <!--::after -->
+            </div>
+        </div>
+
+        <div id="copyright">
+            <div class="inner_wrap">
+                <div class="copy">
+                    <ul>
+                        <li style="width:25.5%; border-right:1px solid #757575;"><div><span>E-MAIL</span>
+                            <img src="{% static 'img/mail.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>HELP@HOBBYBOX.LIFE</p></div></li>
+                        <li style="width:23.5%; border-right:1px solid #757575;"><div><span>KAKAO</span>
+                            <img src="{% static 'img/talk.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>@하비박스</p></div></li>
+                        <li style="width:23.5%; border-right:1px solid #757575;"><div><span>CS CENTER</span>
+                            <img src="{% static 'img/call.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>070-4060-8222 <br/>
+                                평일 : AM10:00-PM5:00 <br/>
+                                점심시간 : PM12:30-PM1:30 <br/>
+                                휴무 토 일 공휴일
+                            </p></div></li>
+                        <li style="width:23.5%;"><div><span>BANK INFO</span>
+                            <img src="{% static 'img/bank.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>국민 : 673037-01-000920 <br/> 예금주 : 주식회사 하비박스</p></div></li>
+                    </ul>
+                </div>
+                <div class="add">
+                    <p style="font-size: 16px;">copyright 주식회사 하비박스. all rights reserved.</p>
+                    <span>회사명 : 주식회사 하비박스 | 주소 : 경기도 안산시 단원구 연수원로 87, 109호 (원곡동, 청년창업사관학교)<br/>
+                    대표자: 도현아 | 통신판매신고번호 : 2017-경기안산-0850호 | 사업자등록번호 : 899-87-00833 [사업자정보확인]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

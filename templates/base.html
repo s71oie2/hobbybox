@@ -1,0 +1,110 @@
+<!DOCTYPE html>     <!--HTML5 규약을 준수하는 파일-->
+<html lang="ko">    <!--언어는 한국어로 지정--><!---->
+
+<head>              <!--페이지 타이틀과 css 파일 2개를 연결-->
+<title>{% block title %}HOBBYBOX{% endblock %}</title>
+
+{% load staticfiles %}  <!--정적 파일인 css 연결하기 위하여, staticfiles를 로드-->
+<!--스타일시트 css/base.css 작성이 필요함-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static 'css/base.css' %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />   <!--추가적인 css파일 불러오고 싶으면 사용. 현재는 비어있음-->
+<link rel="shortcut icon" href="{% static 'img/favi_logo_my.ico' %}">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+
+</head>
+<!--드래그 금지-->
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">              <!--바디 영역은 4 영역(헤더/메뉴/콘텐츠/풋터)으로 구성-->
+
+<div id="header">                   <!--헤더 영역-->
+
+    <div id="menu">                     <!--메뉴 영역-->
+        <li><a href="{%  url 'home' %}"><img src="{% static 'img/logo.png' %}" class="logo"/></a></li>
+        <li><a href="{% url 'home' %}">소개</a></li>
+        <li><a href="{% url 'hobby:index' %}">취미박스</a>
+            <ul>
+                <li><a href="{% url 'hobby:album_detail' 1 %}">감상형</a></li>
+                <li><a href="{% url 'hobby:album_detail' 5 %}">분석형</a></li>
+                <li><a href="{% url 'hobby:album_detail' 4 %}">오락형</a></li>
+                <li><a href="{% url 'hobby:album_detail' 2 %}">제작형</a></li>
+                <li><a href="{% url 'hobby:album_detail' 3 %}">창작형</a></li>
+            </ul>
+        </li>  <!--드롭다운, 제작형/창작형/감상형/오락형/분석형 -->
+
+        <li><a href="{% url 'dlivry:index' %}">정기배달</a></li>
+        <li><a href="{% url 'news:index' %}">새소식</a></li>
+        <li><a href="{% url 'review:index' %}">자랑</a></li>
+    </div>
+
+
+{#유저정보 부분#}
+        {% if user.is_active %}
+        <h4 class="welcome">안녕하세요.
+            <a href="{% url 'admin:index' %}"><strong>{% firstof user.get_username %}</strong> 님</a> /
+{#                    <a href="#">비밀번호 변경</a> /#}
+                    <a href="{% url 'user:logout' %}">로그아웃</a>
+        </h4>
+        {% else %}
+        <h4 class="welcome">안녕하세요. <a href="#">익명의 사용자</a>님  /
+                    <a href="{% url 'user:login' %}">로그인</a> /
+                    <a href="{% url 'user:create' %}">회원가입</a>
+        </h4>
+        {% endif %}
+
+</div>
+
+{% block content %}
+{% endblock %}   <!--블록 태그로 콘텐츠 영역 정의 -->
+
+<!--블록 태그로 풋터 영역 정의-->
+{% block footer %}
+
+    <div id="footer">
+        <div class="scroll">
+            <div class="inner_wrap">
+                <div class="scroll_up">
+                    <a href="#header">
+                        <span><img src="{% static 'img/up.png' %}" style="width: 24px; margin-right: 5px; vertical-align: middle;"/>SCROLL UP</span>
+                    </a>
+                </div>
+                <!--::after -->
+            </div>
+        </div>
+
+        <div id="copyright">
+            <div class="inner_wrap">
+                <div class="copy">
+                    <ul>
+                        <li style="width:25.5%; border-right:1px solid #757575;"><div><span>E-MAIL</span>
+                            <img src="{% static 'img/mail.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>HELP@HOBBYBOX.LIFE</p></div></li>
+                        <li style="width:23.5%; border-right:1px solid #757575;"><div><span>KAKAO</span>
+                            <img src="{% static 'img/talk.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>@하비박스</p></div></li>
+                        <li style="width:23.5%; border-right:1px solid #757575;"><div><span>CS CENTER</span>
+                            <img src="{% static 'img/call.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>070-4060-8222 <br/>
+                                평일 : AM10:00-PM5:00 <br/>
+                                점심시간 : PM12:30-PM1:30 <br/>
+                                휴무 토 일 공휴일
+                            </p></div></li>
+                        <li style="width:23.5%;"><div><span>BANK INFO</span>
+                            <img src="{% static 'img/bank.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>국민 : 673037-01-000920 <br/> 예금주 : 주식회사 하비박스</p></div></li>
+                    </ul>
+                </div>
+                <div class="add">
+                    <p style="font-size: 16px;">copyright 주식회사 하비박스. all rights reserved.</p>
+                    <span>회사명 : 주식회사 하비박스 | 주소 : 경기도 안산시 단원구 연수원로 87, 109호 (원곡동, 청년창업사관학교)<br/>
+                    대표자: 도현아 | 통신판매신고번호 : 2017-경기안산-0850호 | 사업자등록번호 : 899-87-00833 [사업자정보확인]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+</body>
+</html>

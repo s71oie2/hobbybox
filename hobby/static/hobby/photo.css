@@ -1,0 +1,207 @@
+h2 {font-weight: bold;}
+
+.line {
+    height: 3px;
+    width: 55px;
+    display: inline-block;
+    background: #ee3f36;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.album-list table {
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.category{
+    vertical-align: middle;
+    font-size: 16px;
+    color: #4c4c4c;
+}
+.title{
+    vertical-align: middle;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+}
+.descript{
+    vertical-align: middle;
+    font-size: 15px;
+    color: #8a8a8a;
+}
+.pht_descript {
+    vertical-align: middle;
+    font-size: 12px;
+    color: #8a8a8a;
+}
+
+.price{
+    vertical-align: middle;
+    text-align: right;
+    font-size: 20px;
+    color: #ee3f36;
+    font-weight: bolder;
+    border-top: 2px dotted #ccc;
+    border-bottom: 2px dotted #ccc;
+}
+
+.thumbnail {
+    margin-bottom: 0px;
+}
+/* album_list.html */
+div.album-list {
+    margin: 20px 50px;
+}
+
+div.album-list-photo {
+    float: left;
+    width: 150px;
+    height: 180px;
+}
+
+/* album_detail.html */
+div.album-detail {
+    margin: 30px 10px;
+}
+
+div.album-detail-photo {
+    float: left;
+    width: 220px;
+    height: 220px;
+}
+
+div.album-detail-photo > li {
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* photo_detail.html */
+table.photo-detail {
+    margin: 30px 50px 0 50px;
+    border: 1px solid #ccc;
+}
+
+table.photo-detail td {
+    width: 50%;
+}
+
+table.photo-detail ul li {
+    font-weight: bold;
+}
+
+table.photo-detail ul p {
+    font-style: italic;
+}
+
+/* common */
+img.thumbnail {
+    border: none;
+    display: inline-block;
+    width: 355px;
+}
+
+div.clear_float {
+    clear: both;
+    margin: auto 0;
+}
+
+div.clear_float a {
+    font-size: 20px;
+    color: #000;
+}
+
+div.clear_float a:hover {
+    color: #ee3f36;
+}
+
+.centered_photo {text-align: center;}
+
+.hobby_detail {
+    padding-right: 30%;
+}
+
+#tbl {
+    position: absolute;
+    border-collapse: collapse;
+    width: 350px;
+    display: inline-table;
+    text-align: left;
+    margin-left: 30px;
+    vertical-align: middle;
+    height: 400px;
+}
+
+td, th {border-bottom: none;}
+
+#tbl td, #tbl th {
+    /*border: 1px solid #ddd;*/
+    padding: 8px;
+}
+
+
+/*앨범리스트*/
+.hobby_list {
+    width: 100%;
+    margin-bottom: 130px;
+}
+
+.hobby_list ul {
+    display: inline-block;
+    padding: 0;
+    width: 33%;
+}
+
+.hobby_list li {
+    list-style: none;
+    display: inline-block;
+}
+
+div.space {
+    text-align: center;
+    clear: both;
+    width: 370px;
+    height: 430px;
+}
+
+div.space_txt {
+    width: 310px;
+    text-align: left;
+    display: inline-table;
+    margin-top: 10px;
+}
+
+/*포토 디테일*/
+p.other_posts a {
+    color: #000;
+}
+p.other_posts a:hover {
+    color: #ee3f36;
+}
+table p {
+    font-size: 14px;
+    font-weight: bold;
+}
+.buy_btn {
+    margin-left: 35px;
+    width: 300px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn_style {
+    margin: 5px;
+    width: 300px;
+    background-color: #ee3f36;
+    border: none;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px;
+}
+.btn_style:hover {
+    background-color: #4c4c4c;
+}

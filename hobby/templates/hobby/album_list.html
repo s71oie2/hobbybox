@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}HOBBYBOX{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "hobby/photo.css" %}{% endblock %}
+
+{% block content %}
+<div id="content">
+    <div style="text-align: center;">
+        <h2 style="display:inline">
+            취미 쇼핑하기
+        </h2> <br/><br/>
+        <b>다양한 취미를 만나보세요</b> <br/><br/>
+        <span class="line"></span>
+
+        <form id = "my_form" action="." method="post"> {% csrf_token %}
+                {{ form }}
+            <input type="submit" value="검색" />
+        </form>
+    </div>
+    {% if object_list and schWord %}
+        <h2 class="centered" style="margin-bottom: 20px">({{ schWord }})에 대한 통합검색 결과</h2>
+        <div class="hobby_list">
+            {% for photo in object_list|slice:":4" %}
+                <ul>
+                    <li>
+                        <div class="space">
+                            <a href="{{ photo.get_absolute_url }}">  <!-- get은 하나, filter는 여러 개 가져오는 방식 -->
+                                <img class="thumbnail" src="{{ photo.image.url }}" />
+                            </a>
+                            <div class="space_txt">
+                                <span class="descript">{{ album.description }}</span> <br/>
+                                <span class="title">{{ photo.title }}</span> <br/>
+                                <span class="pht_descript">{{ photo.description }}</span>
+                                <hr style="width: 300px;"/>
+                                <span class="price" style="border-bottom: none;">{{ photo.price }}</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+    {% elif schWord %}
+        <p class="centered">
+            <strong>
+                ({{ schWord }})에 대한 <i>통합</i>검색 결과가 없습니다!
+            </strong>
+        </p>
+    {% else %}
+    {% for album in object_list %} <!--AlbumLV 뷰가 앨범 목록을 object_list로 전달-->
+        <div class="clear_float"> <!--photo.css에서 정의한 클래스, 지정된 float 속성을 해제-->
+            <h2 style="display:inline">
+                <a href="{% url 'hobby:album_detail' album.id %}">{{ album.name }}</a>
+            </h2>
+            &emsp;<b><i>{{ album.description }}</i></b>
+        </div>
+        <hr/>
+
+        <div class="hobby_list">
+            {% for photo in album.photo_set.all|slice:":4" %}
+                <ul>
+                    <li>
+                        <div class="space">
+                            <a href="{{ photo.get_absolute_url }}">  <!-- get은 하나, filter는 여러 개 가져오는 방식 -->
+                                <img class="thumbnail" src="{{ photo.image.url }}" />
+                            </a>
+                            <div class="space_txt">
+                                <span class="descript">{{ album.description }}</span> <br/>
+                                <span class="title">{{ photo.title }}</span> <br/>
+                                <span class="pht_descript">{{ photo.description }}</span>
+                                <hr style="width: 300px;"/>
+                                <span class="price" style="border-bottom: none;">{{ photo.price }}</span>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endif %}
+</div>
+{% endblock %}
+
+{% block footer %}
+
+    <div id="footer" style="top: 3800px;">
+        <div class="scroll">
+            <div class="inner_wrap">
+                <div class="scroll_up">
+                    <a href="#header">
+                        <span><img src="{% static 'img/up.png' %}" style="width: 24px; margin-right: 5px; vertical-align: middle;"/>SCROLL UP</span>
+                    </a>
+                </div>
+                <!--::after -->
+            </div>
+        </div>
+
+        <div id="copyright">
+            <div class="inner_wrap">
+                <div class="copy">
+                    <ul>
+                        <li style="width:25.5%; border-right:1px solid #757575;"><div><span>E-MAIL</span>
+                            <img src="{% static 'img/mail.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>HELP@HOBBYBOX.LIFE</p></div></li>
+                        <li style="width:23.5%; border-right:1px solid #757575;"><div><span>KAKAO</span>
+                            <img src="{% static 'img/talk.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>@하비박스</p></div></li>
+                        <li style="width:23.5%; border-right:1px solid #757575;"><div><span>CS CENTER</span>
+                            <img src="{% static 'img/call.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>070-4060-8222 <br/>
+                                평일 : AM10:00-PM5:00 <br/>
+                                점심시간 : PM12:30-PM1:30 <br/>
+                                휴무 토 일 공휴일
+                            </p></div></li>
+                        <li style="width:23.5%;"><div><span>BANK INFO</span>
+                            <img src="{% static 'img/bank.png' %}" style="width: 36px; vertical-align: middle; margin-top:-15px; margin-left: 5px;"/>
+                            <p>국민 : 673037-01-000920 <br/> 예금주 : 주식회사 하비박스</p></div></li>
+                    </ul>
+                </div>
+                <div class="add">
+                    <p style="font-size: 16px;">copyright 주식회사 하비박스. all rights reserved.</p>
+                    <span>회사명 : 주식회사 하비박스 | 주소 : 경기도 안산시 단원구 연수원로 87, 109호 (원곡동, 청년창업사관학교)<br/>
+                    대표자: 도현아 | 통신판매신고번호 : 2017-경기안산-0850호 | 사업자등록번호 : 899-87-00833 [사업자정보확인]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

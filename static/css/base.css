@@ -1,0 +1,223 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+}
+
+/* PAGE STRUCTURE */
+div #header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    display: table;
+    background: #fff;
+}
+
+#menu {
+    position: relative;
+    top: 0px;
+    left: 0;
+    height: 90px;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-spacing: 80px 0;
+    background: #313030;
+    font-size: 15px;
+}
+
+div#content {
+    position: absolute;
+    top: 140px;
+    left: 50px;
+    right: 50px;
+}
+
+
+/* HEADER */
+.logo {
+    width: 150px;
+    padding: 0 0 0 10px;
+}
+
+.welcome {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    float: right;
+    padding-right: 20px;
+    color: #272727;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.welcome a:link, .welcome a:visited {
+    color: #ee3f36;
+}
+
+/* MENU */
+div#menu a:link, div#menu a:visited {
+    color: #fff;
+}
+
+div#menu > li {
+    display: table-cell;
+    vertical-align: middle;
+    /*border: 2px solid #bbb;*/
+    text-align: center;
+    font-weight: bold;
+}
+
+#menu > li > a:hover {
+    color: #ee3f36;
+    cursor: pointer;
+}
+
+/* 드롭다운메뉴 */
+div#menu li ul {
+    display:none;
+    position:absolute;
+    margin: 0;
+    padding:10px;
+    border: 0;
+    height: auto;
+    background: #313030;
+    width: 125px;
+    z-index: 1;
+    list-style: none;
+    border-radius: 5px;
+}
+
+div#menu li ul a {
+    color: #ee3f36;
+}
+
+div#menu li ul a:hover {
+    color: #ee3f36;
+}
+
+div#menu li:hover ul {
+    display:block;
+}
+
+/* LINK */
+a:link, a:visited {
+    /*color: #369;*/
+    text-decoration: none;
+}
+
+a:hover {
+    /*text-decoration: underline;*/
+    cursor: pointer;
+
+}
+
+/* TABLE */
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    line-height: 18px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    padding: 5px 15px;
+}
+
+/*새로 추가*/
+
+
+#rule {float: right;}
+
+.company_info {
+    text-align: left;
+    font-size: 12px;
+    color: #fff;
+}
+body {height: 1000px;}
+
+
+.sch_smit {
+	width: 40px; height: 40px;
+	margin: 0; border: 0;
+	vertical-align: bottom;
+	background: #313030;
+	color: white;
+	font-weight: bold;
+	border-radius: 100%;
+	cursor: pointer;
+}
+#footer {
+    position: relative;
+    top: 2300px;
+    /*background-color: #555;*/
+    bottom: 0;
+    /*height: 30px;*/
+    /*padding: 20px 20px 100px 20px;*/
+    text-align: left;
+}
+/*하단 스크롤*/
+.scroll {
+    display: block;
+    line-height: 100px;
+    clear: both;
+    background: #272727;
+}
+.inner_wrap {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    min-width: 1200px;
+}
+.scroll_up {
+    height: 100px;
+    background: #272727;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+}
+
+.scroll_up span {
+    border-left: 1px solid #313030;
+    border-right: 1px solid #313030;
+    width: 200px;
+    display: inline-block;
+    font-size: 18px;
+    height: 100px;
+    margin-bottom: 100px;
+}
+.scroll_up > a {text-decoration: none;}
+span {color: #fff; font-size: 24px;}
+#copyright p {color: #fff; font-size: 12px; margin: 10px;}
+#copyright {
+    display: block;
+    background: #313030;
+    clear: both;
+}
+#copyright .copy {
+    margin: 0 auto;
+    text-align: center;
+}
+#copyright .copy ul li {
+    float: left;
+    height: 130px;
+}
+#copyright .copy ul {
+    clear: both;
+    display: block;
+    width: 100%;
+    padding-top: 60px;
+}
+#copyright .add {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 150px;
+}
+#copyright .add span {
+    padding-bottom: 50px;
+    display: block;
+    font-size: 13px;
+    padding-top: 25px;
+    font-weight: 200;
+}

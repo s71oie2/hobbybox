@@ -1,0 +1,6 @@
+.centered { text-align: center; }
+div#intro {
+    text-align: center;
+    font-weight:lighter;
+    table: center;
+}

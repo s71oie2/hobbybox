@@ -1,0 +1,164 @@
+p{
+    color: black;
+}
+table.wrttbl{
+    margin: 0 auto;
+}
+
+table#review {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table#review th {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 14px;
+}
+.review_all {
+    height: 300px;
+}
+
+.review_btn {
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    margin-left: 83%;
+}
+
+.wrtbtn{
+    padding: 7px 7px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #313030;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    display: block;
+}
+.wrtbtn:hover{
+    background-color: #ee3f36;
+}
+
+span.glyphicon:hover{
+    color: #ee3f36;
+}
+
+td {
+    padding: 10px 0;
+}
+
+th {
+    padding: 15px 0;
+}
+
+td a {
+    color: #000;
+}
+td a:hover {
+    color: #ee3f36;
+}
+
+h2 {font-weight: bold;}
+
+.line {
+    height: 3px;
+    width: 55px;
+    display: inline-block;
+    background: #ee3f36;
+    margin: 0 auto;
+    text-align: center;
+}
+
+span#page {
+    color: #000;
+    font-size: 14px;
+    width: 200px;
+}
+
+span a {
+    font-size: 14px;
+    color: #000;
+}
+
+.centered {
+    text-align: center;
+}
+
+/*폼 css*/
+
+.review_form {
+    font-size: 14px;
+    margin: 0 auto;
+    width: 950px;
+}
+.review_prod {
+    padding: 5px;
+    width: 900px;
+    height: 30px;
+}
+.review_title {
+    padding: 5px;
+    width: 900px;
+    height: 30px;
+}
+.review_text {
+    padding: 5px;
+    width: 900px;
+    height: 200px;
+}
+.review_rate {
+    padding: 5px;
+    width: 85px;
+    height: 30px;
+}
+label {
+    font-size: 14px;
+    padding-right: 10px;
+    color: #4c4c4c;
+}
+.buy_btn {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    display: inline-block;
+
+}
+.back_btn, .submit_btn {
+    margin: 5px;
+    width: 80px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.back_btn:hover {
+    text-decoration-line: underline;
+}
+.submit_btn:hover{
+    background-color: #ee3f36;
+    color: #fff;
+    border: none;
+}
+.btn_two {
+    margin-top: 5px;
+}
+.btn-default {
+    background-color: #eeeeee;
+    border: none;
+}
+.glyphicon {
+    color: #4c4c4c;
+}
+div.post {
+    text-align: center;
+    padding: 10px;
+}

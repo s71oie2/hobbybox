@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}HOBBYBOX{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "dlivry/photo.css" %}{% endblock %}
+
+{% block content %}
+<div id="content">
+    {% for album in object_list %} <!--AlbumLV 뷰가 앨범 목록을 object_list로 전달-->
+        <div class="clear_float"> <!--photo.css에서 정의한 클래스, 지정된 float 속성을 해제-->
+            <h2 style="display:inline">
+                {{ album.name }}
+            </h2> <br/><br/>
+            <b>{{ album.description }}</b> <br/><br/>
+            <span class="line"></span>
+        </div>
+        <hr/>
+        <div class="album-list">
+            {% for photo in album.photo_set.all|slice:":6" %}  <!-- |로 다음으로 넘긴다는 뜻. slice 5개만 가져옴 -->
+                <div>
+                    <table class="dlivry_list">
+                        <tr>
+                            <td rowspan="4">
+                                <a href="{{ photo.get_absolute_url }}">
+                                    <img class="thumbnail" src="{{ photo.image.url }}" />
+                                </a>
+                            </td>
+                            <td class="category">{{ photo.category }}</td>
+                        </tr>
+                        <tr>
+                            <td class="title">{{ photo.title }}</td>
+                        </tr>
+                        <tr>
+                            <td class="descript">{{ photo.description }}</td>
+                        </tr>
+                        <tr>
+                            <td class="price">{{ photo.price }}</td>
+                        </tr>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}HOBBYBOX{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+<div class="panel panel-default registration">
+    <div class="panel-heading">
+        로그인
+    </div>
+    <br/><br/><br/>
+    <div class="panel-body">
+        <form action="." method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if form.errors %}
+                  <p class="error-note">
+                      이메일 또는 비밀번호를 다시 확인하세요.
+                      {{ form.errors }}
+                  </p>
+                {% endif %}
+
+                <div class="form-group {% if field.errors|length > 0 %}has-error{%endif %}">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+{#                    <input name="{{ field.html_name }}" id="{{ field.id_for_lable }}" class="form-control" type="{{ fieldfield..widget.input_type }}" value="{{ field.value|default_if_none:'' }}">#}
+                    {{ field }}
+                    {% for error in field.errors %}
+                        <label class="control-label" for="{{ field.id_for_label }}">{{ error }}</label>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <div class="form-actions">
+                <button class="btn btn-primary btn-large" type="submit">로그인하기</button>
+            </div>
+            <p></p>
+            <a href="{% url 'user:resend_verify_email' %}/">
+                <div class="link-below-button">인증이메일 재발송</div>
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

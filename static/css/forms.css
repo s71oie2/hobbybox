@@ -1,0 +1,93 @@
+/*Form Error*/
+.errornote {
+    display: block;
+    margin: 5px 0;
+    border: 1px solid #c30;
+    background: #fcf;
+    padding: 5px 25px;
+    color: #c30;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*Authentication Forms*/
+
+fieldset {
+    border: 1px solid #ccc;
+}
+
+.aligned label {
+    width: 170px;
+    display: block;
+    padding: 3px 10px 0 0;
+    float: left;
+}
+
+.form-row {
+    padding: 10px;
+    font-size: 11px;
+    border-bottom: 1px solid #eee;
+}
+
+.submit-row {
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    text-align: right;
+}
+
+.submit-row input {
+    margin: 10px;
+    background: #ffc;
+}
+
+.panel-default{
+    border: none;
+}
+.panel-body {
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #666;  /*박스 틀 */
+}
+
+.btn {
+    width: 40%;
+    height: 40px;
+    background-color: #313030;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+
+}
+.form-actions {
+    margin: 0 auto;
+    text-align: center;
+}
+.link-below-button {
+    margin: 0 auto;
+    text-align: center;
+    color: #ee3f36;
+ }
+
+.centered { text-align: center; }
+
+input{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
